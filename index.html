@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Bitezz | Indian Bakery</title>
+    <meta name="description" content="Pure Bitezz - Indian bakery specializing in both traditional and latest Indian snacks. Bussin Bites... Pure Vibes...">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fefaf0;
+            color: #5d4037;
+            overflow-x: hidden;
+        }
+        
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Custom colors */
+        .bg-primary-brown {
+            background-color: #8B4513;
+        }
+        
+        .bg-secondary-brown {
+            background-color: #A0522D;
+        }
+        
+        .bg-accent-yellow {
+            background-color: #FFD700;
+        }
+        
+        .bg-light-yellow {
+            background-color: #FFF9C4;
+        }
+        
+        .text-primary-brown {
+            color: #8B4513;
+        }
+        
+        .text-secondary-brown {
+            color: #A0522D;
+        }
+        
+        .text-accent-yellow {
+            color: #FFD700;
+        }
+        
+        .border-brown {
+            border-color: #8B4513;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Hamburger menu animation */
+        .hamburger-line {
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        /* Product card hover effect */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.15);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-[#fefaf0]">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-12 h-12 mr-3">
+                        <img src="images/pure_bitezz_logo.jpeg" alt="Pure Bitezz Logo" class="w-full h-full object-contain rounded-full">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-[#8B4513]">Pure Bitezz</h1>
+                        <p class="text-xs text-[#A0522D]">Bussin Bites... Pure Vibes...</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-[#5d4037] hover:text-[#8B4513] font-medium">Home</a>
+                    <a href="#products" class="text-[#5d4037] hover:text-[#8B4513] font-medium">Products</a>
+                    <a href="#about" class="text-[#5d4037] hover:text-[#8B4513] font-medium">About</a>
+                    <a href="#contact" class="text-[#5d4037] hover:text-[#8B4513] font-medium">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="hamburger" class="md:hidden flex flex-col space-y-1.5">
+                    <span class="hamburger-line w-6 h-0.5 bg-[#8B4513] rounded"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-[#8B4513] rounded"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-[#8B4513] rounded"></span>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden mt-2">
+                <div class="flex flex-col space-y-3 py-4">
+                    <a href="#home" class="text-[#5d4037] hover:text-[#8B4513] font-medium py-2 border-b border-gray-100">Home</a>
+                    <a href="#products" class="text-[#5d4037] hover:text-[#8B4513] font-medium py-2 border-b border-gray-100">Products</a>
+                    <a href="#about" class="text-[#5d4037] hover:text-[#8B4513] font-medium py-2 border-b border-gray-100">About</a>
+                    <a href="#contact" class="text-[#5d4037] hover:text-[#8B4513] font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-12 md:py-20 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="bg-gradient-to-r from-[#8B4513] to-[#FFD700] text-white p-8 rounded-2xl shadow-xl">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-playfair">Pure Bitezz</h2>
+                        <p class="text-xl mb-6">Indian Bakery Specializing in Traditional & Modern Snacks</p>
+                        <p class="text-lg mb-8">Experience the perfect blend of authentic Indian flavors with contemporary twists. Our snacks are crafted with love and traditional recipes passed down through generations.</p>
+                        <!-- <div class="bg-white text-[#8B4513] inline-block px-6 py-3 rounded-full font-bold text-lg shadow-md mb-8">
+                            Products Coming Soon!
+                        </div> -->
+                        
+                        <!-- Social Media Placeholders -->
+                        <div class="flex flex-wrap gap-4 mt-6">
+                            <!-- WhatsApp Box -->
+                            <div class="bg-white rounded-xl p-4 shadow-md flex items-center space-x-3 min-w-[200px]">
+                                <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                                    <i class="fab fa-whatsapp text-2xl text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">WhatsApp</h4>
+                                    <p class="text-sm text-gray-600">Coming soon...</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Instagram Box -->
+                            <div class="bg-white rounded-xl p-4 shadow-md flex items-center space-x-3 min-w-[200px]">
+                                <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center">
+                                    <i class="fab fa-instagram text-2xl text-pink-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Instagram</h4>
+                                    <p class="text-sm text-gray-600">Coming soon...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-[#FFD700] to-[#FFF9C4] flex items-center justify-center shadow-2xl overflow-hidden">
+                            <div class="text-center w-full h-full p-2">
+                                <img src="images/pure_bitezz_no_bg.png" alt="Pure Bitezz Logo" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-[#8B4513] opacity-20"></div>
+                        <div class="absolute -bottom-4 -left-4 w-24 h-24 rounded-full bg-[#FFD700] opacity-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-12 md:py-20 px-4 bg-[#FFF9C4]">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#8B4513] mb-4 font-playfair">Our Delicious Offerings</h2>
+                <p class="text-lg text-[#5d4037] max-w-2xl mx-auto">We specialize in both traditional Indian snacks and modern creations that cater to today's tastes.</p>
+            </div>
+            
+            <!-- Coming Soon Banner -->
+            <div class="bg-gradient-to-r from-[#8B4513] to-[#A0522D] text-white p-6 rounded-xl text-center mb-12 max-w-3xl mx-auto shadow-lg">
+                <h3 class="text-2xl font-bold mb-2"><i class="fas fa-hourglass-half mr-2"></i>Products Coming Soon!</h3>
+                <p class="text-lg">We're preparing our kitchen to serve you the finest Indian snacks. Stay tuned for our launch!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Long-lasting Snacks -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg product-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-[#FFD700] flex items-center justify-center mr-4">
+                            <i class="fas fa-cookie-bite text-xl text-[#8B4513]"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#8B4513]">Long-lasting Snacks</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Perfect for online orders and shelf storage. These snacks stay fresh and delicious for longer periods.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Choco Chip Cookies</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Fruit Biscuits</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Oats Biscuits</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Ragi Biscuits</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Ellu Muruku (Savory)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Kara Muruku (Savory)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Bulk Snacks for Events -->
+                <div class="bg-white rounded-2xl p-6 shadow-lg product-card">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-[#8B4513] flex items-center justify-center mr-4">
+                            <i class="fas fa-users text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#8B4513]">Bulk Snacks for Events</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Perfect for weddings, corporate events, parties, and gatherings. Customizable packages available.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-utensils text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Veg & Non-Veg Puffs</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-utensils text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Samosas (Various fillings)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-utensils text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Sweets like Dry Jamoon</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-utensils text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">Karas (Traditional crunchy snacks)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-utensils text-[#8B4513] mr-3"></i>
+                            <span class="text-gray-700">And many more traditional options</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-[#FFF9C4] rounded-lg">
+                        <p class="text-sm text-[#5d4037]"><i class="fas fa-info-circle text-[#8B4513] mr-2"></i>Contact us for custom event packages and pricing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 md:py-20 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="relative">
+                        <div class="w-full h-64 md:h-80 rounded-2xl bg-gradient-to-r from-[#8B4513] to-[#FFD700]"></div>
+                        <div class="absolute -bottom-6 -right-6 w-48 h-48 rounded-2xl bg-[#FFF9C4] shadow-xl flex items-center justify-center">
+                            <i class="fas fa-mortar-pestle text-6xl text-[#8B4513]"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#8B4513] mb-6 font-playfair">About Pure Bitezz</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Pure Bitezz is an Indian bakery that brings together the rich heritage of traditional Indian snacks with innovative modern creations. Our mission is to deliver "Bussin Bites" with "Pure Vibes" - snacks that not only taste incredible but also bring joy and connection.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        We specialize in both traditional recipes passed down through generations and contemporary snacks that cater to today's tastes. From classic murukku and biscuits to fusion creations, every product is made with high-quality ingredients and meticulous care.
+                    </p>
+                    <div class="bg-[#FFF9C4] p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-[#8B4513] mb-3">Our Philosophy</h3>
+                        <p class="text-gray-700">
+                            <i class="fas fa-heart text-[#8B4513] mr-2"></i> Authentic flavors with a modern twist<br>
+                            <i class="fas fa-heart text-[#8B4513] mr-2"></i> Quality ingredients, traditional techniques<br>
+                            <i class="fas fa-heart text-[#8B4513] mr-2"></i> Snacks that create memories and connections
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 md:py-20 px-4 bg-[#f5f5f5]">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#8B4513] mb-4 font-playfair">Connect With Us</h2>
+                <p class="text-lg text-[#5d4037] max-w-2xl mx-auto">We're currently setting up our WhatsApp Business and Instagram accounts. Check back soon for direct links to connect with us!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- WhatsApp Placeholder -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-whatsapp text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#8B4513] mb-4">WhatsApp Business</h3>
+                    <p class="text-gray-600 mb-6">We'll soon have a WhatsApp Business account for easy ordering and inquiries.</p>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <p class="text-green-800"><i class="fas fa-clock mr-2"></i>Coming soon - Link will be available shortly</p>
+                    </div>
+                </div>
+                
+                <!-- Instagram Placeholder -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-instagram text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#8B4513] mb-4">Instagram</h3>
+                    <p class="text-gray-600 mb-6">Follow us on Instagram for the latest updates, product launches, and behind-the-scenes.</p>
+                    <div class="bg-pink-50 p-4 rounded-lg border border-pink-200">
+                        <p class="text-pink-800"><i class="fas fa-clock mr-2"></i>Coming soon - Handle will be announced shortly</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- General Contact Info -->
+            <div class="mt-16 max-w-3xl mx-auto">
+                <div class="bg-gradient-to-r from-[#8B4513] to-[#A0522D] text-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Stay Updated</h3>
+                    <p class="text-lg mb-6 text-center">While we set up our direct messaging channels, you can reach out via email for inquiries about bulk orders, events, or partnerships.</p>
+                    <div class="text-center">
+                        <a href="mailto:contact.varahifoods@gmail.com" class="inline-block bg-white text-[#8B4513] px-4 md:px-8 py-3 rounded-full font-bold text-sm md:text-lg hover:bg-gray-100 transition duration-300 break-words whitespace-normal text-center max-w-full">
+                            <i class="fas fa-envelope mr-2"></i>contact.varahifoods@gmail.com
+                        </a>
+                    </div>
+                    <p class="text-center mt-8 text-white/80">Pure Bitezz - Bringing you authentic Indian snacks with a modern twist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#8B4513] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center">
+                        <div class="w-16 h-16 mr-4">
+                            <img src="images/pure_bitezz_logo.jpeg" alt="Pure Bitezz Logo" class="w-full h-full object-contain rounded-full">
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold">Pure Bitezz</h2>
+                            <p class="text-white/80">Bussin Bites... Pure Vibes...</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 max-w-md text-white/80">An Indian bakery specializing in both traditional and latest Indian snacks. Quality ingredients, authentic flavors.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition duration-300" aria-label="WhatsApp (coming soon)">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition duration-300" aria-label="Instagram (coming soon)">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="mailto:contact.varahifoods@gmail.com" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition duration-300" aria-label="Email">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p>&copy; <span id="currentYear"></span> Pure Bitezz. All rights reserved.</p>
+                <p class="mt-2 text-white/70">Products Coming Soon | Indian Bakery Specializing in Traditional & Modern Snacks</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Add fade-in animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fade-in {
+                animation: fadeIn 0.6s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
